@@ -13,11 +13,23 @@ export const fetchUsers = () => async (dispatch, getState, axiosInstanceAPI) => 
 export const FETCH_CURRENT_USER = 'fetch_current_user';
 export const fetchCurrentUser = () => async (dispatch, getState, axiosInstanceAPI) => {
     
-        const res = await axiosInstanceAPI.get('/current_user');
-    
-        dispatch({
-            type: FETCH_CURRENT_USER,
-            payload: res
-        });
-    
-    }
+    const res = await axiosInstanceAPI.get('/current_user');
+
+    dispatch({
+        type: FETCH_CURRENT_USER,
+        payload: res
+    });
+
+}
+
+export const FETCH_ADMINS = 'fetch_admins';
+export const fetchAdmins = () => async (dispatch, getState, axiosInstanceAPI) => {
+
+    const res = await axiosInstanceAPI.get('/admins');
+
+    dispatch({
+        type: FETCH_ADMINS,
+        payload: res
+    });
+
+}
